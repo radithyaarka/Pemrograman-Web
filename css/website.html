@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arkananta Radithya</title>
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('fontlib/Montserrat-Medium.ttf');
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #nav {
+            display: flex;
+            background-color: black;
+            font-family: Montserrat;
+            justify-content: center;
+        }
+
+        #nav li {
+            float: left;
+        }
+
+        #nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        #nav li a:hover {
+            background-color: #f419d7;
+            color: rgb(0, 0, 0);
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #f419d7;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .home {
+            margin-top: 7.4%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .nama {
+            font-family: Montserrat;
+            margin-left: 15%;
+            margin-top: 13%;
+            flex: 1;
+        }
+
+        span {
+            color: #f419d7;
+        }
+
+        .homekanan img {
+            width: 55%;
+            height: auto;
+            margin-left: 10%;
+        }
+
+        /* about me */
+
+        #about {
+            padding: 80px;
+            background-color: black;
+            font-family: Montserrat;
+        }
+
+        #about .col {
+            flex-basis: 35%;
+        }
+
+        #about .col img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        #about .col2 {
+            flex-basis: 60%;
+        }
+
+        #about h1 {
+            color: white;
+            display: inline-block;
+            background-color: #f419d7;
+            color: #000000;
+            padding: 2px 10px;
+            border-radius: 10px;
+        }
+
+        #about p {
+            color: white;
+            text-align: justify;
+            font-weight: 100;
+        }
+
+        /* about me edu */
+
+        .edu {
+            padding: 80px;
+            background-color: black;
+            font-family: Montserrat;
+        }
+
+        .edu .judul {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .edu h1 {
+            margin: 0;
+            display: inline-block;
+            background-color: #f419d7;
+            color: #000000;
+            padding: 2px 10px;
+            margin-bottom: 4%;
+            border-radius: 10px;
+        }
+
+        .eduimg {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: black;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .column {
+            flex-basis: 25%;
+            margin: 10px;
+        }
+        
+        .col {
+            width: 50%;
+        }
+
+        .column img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .column .container {
+            position: relative;
+            width: 100%;
+        }
+
+        .column .container .ovlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #f419d7;
+        }
+
+        .column .container:hover .ovlay {
+            opacity: 0.5;
+        }
+
+        .column .container .ovlay .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .column .container .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: rgb(241, 241, 241);">
+    <div id="nav">
+        <ul>
+            <li><a href="#nav">Home</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#exp">Experience</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">My Works
+                </button>
+                <div class="dropdown-content">
+                    <a href="#photo">Photography</a>
+                    <a href="#grph">Graphic Design</a>
+                </div>
+            </div>
+            <li><a href="#con">Contact</a></li>
+        </ul>
+    </div>
+    <div class="home">
+        <div class="nama">
+            <h3>
+                HELLO
+            </h3>
+            <h1>
+                I'm <span>TES</span>TESSSS TESSSS
+            </h1>
+            <p>
+                This is my personal webpage
+                <br>
+                <br>
+                This Webpage contains personal details about me
+                <br>
+                and some of my works
+            </p>
+        </div>
+        <div class="homekanan">
+            <img src="jeta.jpg" class="foto">
+        </div>
+    </div>
+
+    <!-- about me -->
+
+    <div id="about">
+        <div class="content">
+            <div class="row">
+                <div class="col">
+                    <img src="jeta.jpg">
+                </div>
+                <div class="col2">
+                    <h1 class="judul">ABOUT ME</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla sagittis vestibulum. In
+                        blandit velit lobortis, ultricies justo quis, consectetur erat. Integer varius elit est, non
+                        maximus leo sagittis nec. Suspendisse at consectetur lectus. Maecenas non lacinia neque. Ut eget
+                        venenatis velit. Morbi at dignissim ante. Donec id ante porttitor, pellentesque nulla quis,
+                        fermentum mauris.
+                        Maecenas aliquam tempor dolor ullamcorper euismod. Sed aliquam volutpat efficitur. Integer
+                        feugiat, nibh a feugiat molestie, metus risus pellentesque sapien, quis vestibulum velit orci
+                        quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla sagittis
+                        vestibulum. In
+                        blandit velit lobortis, ultricies justo quis, consectetur erat. Integer varius elit est, non
+                        maximus leo sagittis nec. Suspendisse at consectetur lectus. Maecenas non lacinia neque. Ut eget
+                        venenatis velit. Morbi at dignissim ante. Donec id ante porttitor, pellentesque nulla quis,
+                        fermentum mauris.
+                        Maecenas aliquam tempor dolor ullamcorper euismod. Sed aliquam volutpat efficitur. Integer
+                        feugiat, nibh a feugiat molestie, metus risus pellentesque sapien, quis vestibulum velit orci
+                        quis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="edu">
+        <div class="judul">
+            <h1>MY EDUCATION</h1>
+        </div>
+        <div class="eduimg">
+            <div class="column">
+                <div class="container">
+                    <img src="jeta.jpg" class="image">
+                    <div class="ovlay">
+                        <div class="text"> TES </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="container">
+                    <img src="jeta.jpg" class="image">
+                    <div class="ovlay">
+                        <div class="text"> TES </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="container">
+                    <img src="jeta.jpg" class="image">
+                    <div class="ovlay">
+                        <div class="text"> TES </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
