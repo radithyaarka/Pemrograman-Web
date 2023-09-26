@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+    <input type="text" id="inputAngka" placeholder="Masukkan angka">
+    <br><br>
+    <button onclick="tambahAngka(1)">1</button>
+    <button onclick="tambahAngka(2)">2</button>
+    <button onclick="tambahAngka(3)">3</button>
+    <button onclick="tambahAngka(4)">4</button>
+    <button onclick="tambahAngka(5)">5</button>
+    <button onclick="tambahAngka(6)">6</button>
+    <button onclick="tambahAngka(7)">7</button>
+    <button onclick="tambahAngka(8)">8</button>
+    <button onclick="tambahAngka(9)">9</button>
+    <button onclick="tambahAngka(0)">0</button>
+    <br><br>
+    <button onclick="tambah()">(+)</button>
+    <button onclick="kurang()">(-)</button>
+    <button onclick="kali()">(x)</button>
+    <button onclick="bagi()">(/)</button>
+    <button onclick="hitung()">(=)</button>
+    <br><br>
+    <p>Hasil: <span id="hasil"></span></p>
+    <br>
+    <button onclick="clearInput()">Clear</button>
+
+    <script>
+        var angka1 = "";
+        var operator = "";
+        var angka2 = "";
+
+        function tambahAngka(digit) {
+            if (operator === "") {
+                angka1 = digit;
+                document.getElementById("inputAngka").value = angka1;
+            } else {
+                angka2 = digit;
+                document.getElementById("inputAngka").value = angka2;
+            }
+        }
+
+        function tambah() {
+            operator = "+";
+            document.getElementById("inputAngka").value = operator;
+        }
+
+        function kurang() {
+            operator = "-";
+            document.getElementById("inputAngka").value = operator;
+        }
+
+        function kali() {
+            operator = "x";
+            document.getElementById("inputAngka").value = operator;
+        }
+
+        function bagi() {
+            operator = "/";
+            document.getElementById("inputAngka").value = operator;
+        }
+
+        function hitung() {
+            var hasil;
+            switch (operator) {
+                case "+":
+                    hasil = parseFloat(angka1) + parseFloat(angka2);
+                    break;
+                case "-":
+                    hasil = parseFloat(angka1) - parseFloat(angka2);
+                    break;
+                case "x":
+                    hasil = parseFloat(angka1) * parseFloat(angka2);
+                    break;
+                case "/":
+                    hasil = parseFloat(angka1) / parseFloat(angka2);
+                    break;
+            }
+            document.getElementById("hasil").innerText = hasil;
+        }
+
+        function clearInput() {
+            angka1 = "";
+            operator = "";
+            angka2 = "";
+            document.getElementById("inputAngka").value = "";
+            document.getElementById("hasil").innerText = "";
+        }
+    </script>
+</body>
+</html>
+
+
