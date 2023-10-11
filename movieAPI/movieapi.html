@@ -9,12 +9,12 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Weather API</title>
+    <title>Movie API</title>
 
-    <link href=".\tugas\code\pemweb\sb_admin\css/sb-admin-2.min.css" rel="stylesheet" type="text/css" />
-    <link href="\tugas\code\pemweb\sb_admin\css/sb-admin-2.css" rel="stylesheet" />
+    <link href="sb-admin-2.min.css" rel="stylesheet" type="text/css" />
+    <link href="sb-admin-2.css" rel="stylesheet" />
 
-    <link href="\tugas\code\pemweb\sb_admin\css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="sb-admin-2.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/2162fe8fc6.js" crossorigin="anonymous"></script>
 </head>
 
@@ -30,17 +30,35 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between m-4"></div>
 
-                    <div class="row">
+                    <div class="row mx-auto">
+                        <div class="col-lg mb-4">
+                            <div class="card shadow h-100 py-2">
+                                <div class="card-body">
+                                    <h5 class="font-weight-bold text-gray-800">Search for a Movie</h5>
+                                    <div class="input-group mb-3">
+                                        <input type="text" id="movie-title-input" class="form-control"
+                                            placeholder="Enter a movie title">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-primary"
+                                                id="search-movie-button">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mx-auto">
                         <div class="col-lg mb-4">
                             <div class="card shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <p> <span id="location"></span></p>
+                                                <p> <span id="movie-title"></span></p>
                                             </div>
                                             <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                Location
+                                                Title
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -59,16 +77,16 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <p> <span id="weather-description"></span></p>
+                                                        <p> <span id="movie-year"></span></p>
                                                     </div>
                                                     <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                        <p class="card-text">Weather
+                                                        <p class="card-text">Release
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa-solid fa-cloud fa-2xl" style="color: #49b0ff"></i>
+                                            <i class="fa-regular fa-calendar fa-2xl" style="color: #49b0ff"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -83,16 +101,16 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <p><span id="temp"></span>&deg;C</p>
+                                                        <p><span id="movie-rating"></span></p>
                                                     </div>
                                                     <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                        <p class="card-text">Temperature
+                                                        <p class="card-text">Rating
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa-solid fa-temperature-high fa-2xl" style="color: #fd58dc"></i>
+                                            <i class="fa-solid fa-chart-simple fa-2xl" style="color: #fd58dc"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -107,101 +125,46 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <p><span id="humidity"></span></p>
+                                                        <p><span id="movie-genre"></span></p>
                                                     </div>
                                                     <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                        <p class="card-text">Humidity
+                                                        <p class="card-text">Genre
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa-solid fa-droplet fa-2xl" style="color: #5bbbee"></i>
+                                            <i class="fa-solid fa-bars fa-2xl" style="color: #5bbbee"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg mb-3">
-                            <div class="card shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <p> <span id="wind-speed"></span></p>
-                                                    </div>
-                                                    <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                        <p class="card-text">Wind Speed
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-wind fa-2xl" style="color: #49b0ff"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg mb-3">
+                    <div class="row mx-auto">
+                        <div class="col-lg mb-8">
                             <div class="card shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <p><span id="pressure"></span></p>
-                                                    </div>
-                                                    <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                        <p class="card-text">Pressure
-                                                    </div>
-                                                </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">
+                                                <p><img id="movie-posters"></p>
+                                                <p style="font-weight: lighter;"><span id="movie-desc"></p>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-compress fa-2xl" style="color: #a70000"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg mb-3">
-                            <div class="card shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <p><span id="humidity"></span></p>
-                                                    </div>
-                                                    <div class="text-s font-weight-bold text-uppercase mb-1">
-                                                        <p class="card-text">Kosong
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-droplet fa-2xl" style="color: #5bbbee"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -209,44 +172,58 @@
                     </div>
                 </div>
             </footer>
-            <!-- End of Footer -->
         </div>
-        <!-- End of Content Wrapper -->
+
     </div>
-    <!-- End of Page Wrapper -->
     <a class="scroll-to-top rounded"
         href="file:///C:/Users/felis/Downloads/startbootstrap-sb-admin-2-gh-pages/startbootstrap-sb-admin-2-gh-pages/smartfarming.html#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Bootstrap core JavaScript-->
     <script src="./Smartfarming2_files/jquery.min.js.download"></script>
     <script src="./Smartfarming2_files/bootstrap.bundle.min.js.download"></script>
 
-    <!-- Core plugin JavaScript-->
     <script src="./Smartfarming2_files/jquery.easing.min.js.download"></script>
 
-    <!-- Custom scripts for all pages-->
     <script src="./Smartfarming2_files/sb-admin-2.min.js.download"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
         $(document).ready(function () {
-            const apiKey = '144d889ad795bc1d2b422e36e5891623';
-            const city = 'Surabaya';
-            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            const apiKey = '54fb3002';
 
-            // Fetch weather data
-            $.get(apiUrl, function (data) {
-                $('#temp').text(data.main.temp.toFixed(1));
-                $('#weather-description').text(data.weather[0].description);
-                $('#location').text(data.name + ', ' + data.sys.country);
-                $('#humidity').text(data.main.humidity + '%');
-                $('#wind-speed').text(data.wind.speed + ' m/s');
-                $('#pressure').text(data.main.pressure + ' hPa');
+            $('#search-movie-button').click(function () {
+                const movieTitle = $('#movie-title-input').val();
+                const apiUrl = `https://www.omdbapi.com/?plot=full&t=${movieTitle}&apikey=${apiKey}`;
+
+                $.get(apiUrl, function (data) {
+                    if (data.Response === 'True') {
+                        $('#movie-title').text(data.Title);
+                        $('#movie-year').text(data.Year);
+                        $('#movie-rating').text(data.Rated);
+                        $('#movie-genre').text(data.Genre);
+                        $('#movie-posters').attr('src', data.Poster);
+                        $('#movie-desc').text(data.Plot);
+                    } else {
+                        $('#movie-title').text('Movie not found');
+                    }
+                });
             });
         });
     </script>
-</body>
 
+    <style>
+        #movie-posters {
+            max-width: 100%;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        #movie-posters:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</body>
 </html>
